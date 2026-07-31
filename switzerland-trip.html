@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Swiss Alps Getaway — 5-Day Couple Trip</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#f0f2f5;color:#1f2937;line-height:1.5}
+@font-face{font-family:'Inter';font-style:normal;font-weight:400 700;src:url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_fjQt4P1RTh3qRfDkP1lnC.woff2) format('woff2');font-display:swap}
+
+/* Hero slideshow */
+html{scroll-behavior:smooth}
+.hero{position:relative;height:100vh;height:100dvh;min-height:500px;overflow:hidden;display:flex;align-items:center;justify-content:center;color:#fff;text-align:center}
+.hero-slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.2s ease}
+.hero-slide.active{opacity:1}
+.hero-slide::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(11,59,70,.7) 0%,rgba(26,122,110,.4) 100%)}
+.hero-content{position:relative;z-index:2;padding:1.5rem;animation:fadeUp .8s ease .3s both}
+.hero-content h1{font-size:clamp(1.8rem,5vw,3rem);font-weight:700;letter-spacing:-.03em;margin-bottom:.5rem;text-shadow:0 2px 20px rgba(0,0,0,.3)}
+.hero .sub{font-size:clamp(.9rem,2vw,1.15rem);opacity:.95;margin-bottom:.3rem}
+.hero .meta{font-size:.85rem;opacity:.8;margin-top:.8rem}
+.hero-dots{position:absolute;bottom:4rem;left:50%;transform:translateX(-50%);display:flex;gap:.6rem;z-index:2}
+.hero-dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.4);cursor:pointer;transition:background .3s}
+.hero-dot.active{background:#fff;transform:scale(1.2)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.hero-arrow{position:absolute;bottom:8.5rem;left:50%;transform:translateX(-50%);z-index:3;background:rgba(255,255,255,.15);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.2);color:#fff;font-size:1.2rem;width:44px;height:44px;border-radius:22px;display:flex;align-items:center;justify-content:center;cursor:pointer;animation:floatArrow 2.5s ease-in-out infinite;transition:background .3s}
+.hero-arrow:hover{background:rgba(255,255,255,.25)}
+@keyframes floatArrow{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(10px)}}
+
+/* Plan */
+.container{max-width:900px;margin:0 auto;padding:1.2rem;scroll-margin-top:3.5rem}
+.plan-title{font-size:.9rem;color:#6b7280;margin-bottom:.2rem;font-weight:500}
+.plan-sub{font-size:.78rem;color:#9ca3af;margin-bottom:1rem}
+
+/* Day cards */
+.day{background:#fff;border-radius:16px;margin-bottom:1.5rem;box-shadow:0 1px 3px rgba(0,0,0,.06),0 1px 2px rgba(0,0,0,.04);overflow:hidden;transition:box-shadow .2s}
+.day:hover{box-shadow:0 4px 12px rgba(0,0,0,.08),0 2px 4px rgba(0,0,0,.04)}
+.day-header{padding:1rem 1.2rem;font-weight:700;font-size:1.05rem;display:flex;align-items:center;gap:.6rem}
+.day1 .day-header{background:#ecfdf5;color:#065f46}
+.day2 .day-header{background:#eff6ff;color:#1e40af}
+.day3 .day-header{background:#fef3c7;color:#92400e}
+.day4 .day-header{background:#ede9fe;color:#5b21b6}
+.day5 .day-header{background:#ffedd5;color:#9a3412}
+.day-header span{font-size:1.2rem}
+.stop{display:flex;flex-flow:row wrap;padding:.85rem 1.2rem;border-top:1px solid #f3f4f6;gap:0;transition:background .15s;position:relative}
+.stop:hover{background:#fafafa}
+.stop:last-child{border-bottom:none}
+.stop-time{font-weight:600;font-size:.82rem;color:#6b7280;flex:1 1 100%;margin-bottom:.3rem}
+.stop-icon{position:absolute;left:1.2rem;top:2.2rem;font-size:1rem}
+.stop-detail{flex:1;min-width:0;padding:0 1.6rem}
+.stop-name{font-weight:600;font-size:.92rem;color:#111827}
+.stop-desc{font-size:.8rem;color:#6b7280;margin-top:2px;line-height:1.45}
+.stop-drive{font-size:.72rem;color:#9ca3af;margin-top:2px;font-style:italic}
+.stop-acts{display:flex;flex-direction:column;gap:2px;min-width:0;background:#f0faf5;border:1px solid #bbf7d0;border-radius:8px;padding:6px 10px 8px;margin:6px 0 0}
+.acts-heading{font-size:.6rem;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:#16a34a;width:100%;margin-bottom:2px}
+.act-badge,.act-link{display:inline-flex;align-items:center;gap:3px;padding:1px 7px;border-radius:10px;font-size:.68rem;font-weight:500;white-space:nowrap;line-height:1.6;text-decoration:none}
+.stop-acts>.act-badge,.act-row{display:flex;align-items:center;gap:6px;width:100%;min-width:0;border-left:3px solid;padding:3px 8px;border-radius:0 4px 4px 0;margin:0}
+.act-row>.act-badge{flex:1;border-left:none;padding:1px 4px}
+.act-book{display:inline-flex;align-items:center;font-size:.6rem;font-weight:600;text-transform:uppercase;letter-spacing:.5px;border:1px solid;border-radius:6px;padding:2px 10px;text-decoration:none;cursor:pointer;transition:all .15s;white-space:nowrap;line-height:1.5;color:inherit}
+a.act-book:hover{background:#1e40af;color:#fff;border-color:#1e40af}
+.act-couple{background:#eff6ff;color:#1e40af}
+.must-see{display:inline-block;background:#fef3c7;color:#92400e;font-size:.65rem;font-weight:600;padding:.1rem .4rem;border-radius:20px;margin-left:.4rem;vertical-align:middle;letter-spacing:.02em;line-height:1.4}
+.cafe-tag{display:inline-block;background:#fef3c7;color:#92400e;font-size:.7rem;padding:.12rem .45rem;border-radius:20px;margin-left:.3rem;font-weight:500}
+.stop-imgs{display:flex;gap:8px;min-width:0;width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;touch-action:pan-x;overscroll-behavior-x:contain;margin-top:8px;padding-bottom:4px;cursor:default}
+.stop-imgs img{flex:0 0 auto;width:200px;height:140px;object-fit:cover;border-radius:10px;cursor:zoom-in;scroll-snap-align:start;transition:transform .3s ease,box-shadow .3s ease}
+.stop-imgs img:hover{transform:scale(1.02);box-shadow:0 4px 20px rgba(0,0,0,.12)}
+@media(max-width:600px){.stop-imgs img{width:160px;height:120px}}
+#lightbox{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.85);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);justify-content:center;align-items:center;padding:2rem;animation:fadeIn .25s ease;touch-action:none}
+#lightbox.active{display:flex}
+#lightbox img{max-width:100%;max-height:85vh;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,.5);object-fit:contain;pointer-events:auto}
+#lightbox .close{position:absolute;top:1.5rem;right:2rem;color:#fff;font-size:2rem;cursor:pointer;width:44px;height:44px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.15);border-radius:50%;transition:background .2s;line-height:1;z-index:3}
+#lightbox .close:hover{background:rgba(255,255,255,.3)}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);z-index:2;color:#fff;font-size:clamp(2rem,6vw,3.5rem);cursor:pointer;width:clamp(44px,12vw,64px);height:clamp(60px,20vw,90px);display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.15);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);border:none;transition:background .2s;user-select:none;-webkit-user-select:none;touch-action:manipulation}
+.lb-nav:hover{background:rgba(0,0,0,.35)}
+.lb-prev{left:0;border-radius:0 8px 8px 0;padding-right:4px}
+.lb-next{right:0;border-radius:8px 0 0 8px;padding-left:4px}
+.lb-counter{position:absolute;bottom:1.5rem;left:50%;transform:translateX(-50%);color:#fff;font-size:.82rem;background:rgba(0,0,0,.4);padding:.3rem .9rem;border-radius:20px;pointer-events:none;z-index:2}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.info-box{background:#fff;border-radius:16px;padding:1.2rem;box-shadow:0 1px 3px rgba(0,0,0,.06),0 1px 2px rgba(0,0,0,.04);margin-bottom:1.2rem}
+.info-box h3{font-size:.95rem;font-weight:700;margin-bottom:.6rem;color:#111827;display:flex;align-items:center;gap:.4rem}
+.info-box ul{list-style:none;font-size:.84rem;color:#4b5563}
+.info-box li{padding:.3rem 0;display:flex;gap:.5rem;align-items:baseline}
+.info-box li::before{content:"\2022";color:#2a9d8f;font-weight:bold}
+.info-box a{color:#1a73e8;text-decoration:none}
+.info-box a:hover{text-decoration:underline}
+.map-section{background:#fff;border-radius:16px;box-shadow:0 1px 3px rgba(0,0,0,.06),0 1px 2px rgba(0,0,0,.04);overflow:hidden;margin-bottom:1.5rem}
+.map-section .map-h{padding:1rem 1.2rem;font-size:.95rem;font-weight:600}
+.map-section iframe{width:100%;height:380px;border:none;display:block}
+.map-link{display:block;text-align:center;padding:.8rem;background:#1a73e8;color:#fff;text-decoration:none;font-weight:600;font-size:.88rem;transition:background .2s}
+.map-link:hover{background:#1557b0}
+.footer{text-align:center;padding:1.5rem;font-size:.78rem;color:#9ca3af}
+@media(max-width:600px){
+.stop{padding:.5rem .8rem}.stop-icon{display:none}#lightbox{padding:1rem}
+.map-section iframe{height:280px}
+.hero{min-height:400px}
+.act-row{flex-direction:column;align-items:stretch;gap:4px}
+.act-row>.act-badge{white-space:normal}
+.hero-arrow{bottom:7rem}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== HERO SLIDESHOW ===== -->
+<div class="hero">
+<div class="hero-slide active" style="background-image:url(https://images.pexels.com/photos/32261843/pexels-photo-32261843.jpeg?auto=compress&cs=tinysrgb&w=1600)"><span style="position:absolute;bottom:7rem;right:1rem;z-index:3;background:rgba(0,0,0,.5);color:#fff;font-size:.72rem;padding:.25rem .55rem;border-radius:20px">&#128205; Jungfraujoch</span></div>
+<div class="hero-slide" style="background-image:url(https://images.pexels.com/photos/7929056/pexels-photo-7929056.jpeg?auto=compress&cs=tinysrgb&w=1600)"><span style="position:absolute;bottom:7rem;right:1rem;z-index:3;background:rgba(0,0,0,.5);color:#fff;font-size:.72rem;padding:.25rem .55rem;border-radius:20px">&#128205; Chapel Bridge, Lucerne</span></div>
+<div class="hero-slide" style="background-image:url(https://images.pexels.com/photos/34242011/pexels-photo-34242011.jpeg?auto=compress&cs=tinysrgb&w=1600)"><span style="position:absolute;bottom:7rem;right:1rem;z-index:3;background:rgba(0,0,0,.5);color:#fff;font-size:.72rem;padding:.25rem .55rem;border-radius:20px">&#128205; Lauterbrunnen Valley</span></div>
+<div class="hero-slide" style="background-image:url(https://images.pexels.com/photos/33867089/pexels-photo-33867089.jpeg?auto=compress&cs=tinysrgb&w=1600)"><span style="position:absolute;bottom:7rem;right:1rem;z-index:3;background:rgba(0,0,0,.5);color:#fff;font-size:.72rem;padding:.25rem .55rem;border-radius:20px">&#128205; Paragliding, Grindelwald</span></div>
+<div class="hero-content">
+<h1>Swiss Alps Getaway</h1>
+<p class="sub">Dublin &rarr; Zurich &rarr; Lucerne &rarr; Interlaken &rarr; Dublin</p>
+<p class="meta">Sat 1 &ndash; Wed 5 Aug 2026 &bull; 2 travellers &bull; by rail</p>
+</div>
+<div class="hero-dots">
+<span class="hero-dot active"></span><span class="hero-dot"></span><span class="hero-dot"></span><span class="hero-dot"></span>
+</div>
+<button class="hero-arrow" onclick="document.querySelector('.container').scrollIntoView({behavior:'smooth'})">&#8595;</button>
+</div>
+
+<!-- ===== ITINERARY ===== -->
+<div class="container">
+
+<p class="plan-title">Switzerland &bull; Sat 1 &ndash; Wed 5 Aug 2026</p>
+<p class="plan-sub">Dublin &rarr; Zurich &rarr; Lucerne &rarr; Interlaken &rarr; Zurich &bull; 5 days &bull; 2 adults &bull; everything by Swiss rail &amp; cable car</p>
+
+<div class="day day1">
+<div class="day-header"><span>&#9992;&#65039;</span> Day 1 &mdash; Sat 1 Aug &middot; Dublin to Lucerne</div>
+
+<div class="map-section">
+<div class="map-h">&#128205; Zurich Airport &rarr; Lucerne</div>
+<iframe loading="lazy" src="https://maps.google.com/maps?saddr=Zurich+Airport&daddr=Lucerne&dirflg=t&output=embed" allowfullscreen></iframe>
+<a class="map-link" href="https://www.google.com/maps/dir/Zurich+Airport/Lucerne" target="_blank">Open in Google Maps</a>
+</div>
+
+<div class="stop">
+<div class="stop-time">07:10</div><div class="stop-icon">&#9992;&#65039;</div>
+<div class="stop-detail"><div class="stop-name">Depart Dublin (DUB)</div><div class="stop-desc">Aer Lingus direct to Zurich, 2h20. Pack layers, passport, and download the SBB app for train times.</div></div>
+</div>
+<div class="stop">
+<div class="stop-time">10:30</div><div class="stop-icon">&#128739;</div>
+<div class="stop-detail"><div class="stop-name">Arrive Zurich Airport</div><div class="stop-desc">Clear immigration, then grab your Swiss Travel Pass / Half Fare Card at the SBB counter in the arrivals hall.</div></div>
+</div>
+<div class="stop">
+<div class="stop-time">11:20</div><div class="stop-icon">&#128646;</div>
+<div class="stop-detail"><div class="stop-name">Train to Lucerne</div><div class="stop-desc">Direct IC/IR from the station under the airport &mdash; 50 min, seats on the right side for lake views.</div><div class="stop-drive">50 min from Zurich Airport</div></div>
+</div>
+<div class="stop">
+<div class="stop-time">12:15</div><div class="stop-icon">&#127980;</div>
+<div class="stop-detail"><div class="stop-name">Drop bags, then lunch</div><div class="stop-desc">Drop luggage at the hotel (check-in is usually 14:00).</div></div>
+</div>
+<div class="stop">
+<div class="stop-time">12:30</div><div class="stop-icon">&#127860;</div>
+<div class="stop-detail"><div class="stop-name">Lunch: Tibits <span class="cafe-tag">Vegan</span></div><div class="stop-desc">Pay-by-weight vegan &amp; veggie buffet right at Lucerne station &mdash; best-value lunch in town.</div></div>
+</div>
+<div class="stop">
+<div class="stop-time">13:45</div><div class="stop-icon">&#127756;</div>
+<div class="stop-detail"><div class="stop-name">Chapel Bridge &amp; Water Tower <span class="must-see">&#9733; Must-See</span></div><div class="stop-desc">Europe's oldest covered wooden bridge (1333) with its octagonal Water Tower &mdash; the postcard shot of Lucerne.</div>
+<div class="stop-imgs"><img src="https://images.pexels.com/photos/7929056/pexels-photo-7929056.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Chapel Bridge, Lucerne" loading="lazy"></div>
+<div class="stop-acts"><div class="acts-heading">&#127919; Activities</div><span class="act-badge act-couple">&#128100; Walk the bridge, read the 17th-century roof paintings</span></div></div>
+</div>
+<div class="stop">
+<div class="stop-time">14:30</div><div class="stop-icon">&#129409;</div>
+<div class="stop-detail"><div class="stop-name">Lion Monument</div><div class="stop-desc">The dying lion carved into sandstone &mdash; Mark Twain called it "the most mournful and moving piece of stone in the world". Free, 10 min from the old town.</div>
+<div class="stop-imgs"><img src="https://images.pexels.com/photos/33711969/pexels-photo-33711969.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Lion Monument, Lucerne" loading="lazy"></div></div>
+</div>
+<div class="stop">
+<div class="stop-time">15:15</div><div class="stop-icon">&#128694;</div>
+<div class="stop-detail"><div class="stop-name">Old Town &amp; Musegg Wall</div><div class="stop-desc">Wander Weinmarkt, the Jesuit Church and the cobbled lanes, then climb the Zyt Tower on the 1400s city wall for a rooftop view.</div></div>
+</div>
+<div class="stop">
+<div class="stop-time">17:30</div><div class="stop-icon">&#127968;</div>
+<div class="stop-detail"><div class="stop-name">Check in &amp; rest</div><div class="stop-desc">Settle in, freshen up &mdash; the balcony comes out for an aperitivo overlooking the rooftops.</div></div>
+</div>
+<div class="stop">
+<div class="stop-time">19:00</div><div class="stop-icon">&#127860;</div>
+<div class="stop-detail"><div class="stop-name">Dinner by the lake</div><div class="stop-desc">Lakeside Swiss dinner &mdash; rösti, Zürcher Geschnetzeltes, or a fondue to share. Plenty of vegetarian options in the old town.</div></div>
+</div>
+</div>
+
+<div class="day day2">
+<div class="day-header"><span>&#128646;</span> Day 2 &mdash; Sun 2 Aug &middot; Mount Rigi &amp; On to Interlaken</div>
+
+<div class="map-section">
+<div class="map-h">&#128205; Lucerne &rarr; Vitznau (Rigi) &rarr; Interlaken</div>
+<iframe loading="lazy" src="https://maps.google.com/maps?saddr=Lucerne&daddr=Vitznau+to:Interlaken&dirflg=t&output=embed" allowfullscreen></iframe>
+<a class="map-link" href="https://www.google.com/maps/dir/Lucerne/Vitznau/Interlaken" target="_blank">Open in Google Maps</a>
+</div>
+
+<div class="stop">
+<div class="stop-time">08:00</div><div class="stop-icon">&#9973;</div>
+<div class="stop-detail"><div class="stop-name">Boat across Lake Lucerne</div><div class="stop-desc">1-hour paddle-steamer cruise from Lucerne to Vitznau &mdash; the classic way to approach the Rigi. Free with a Swiss Travel Pass.</div>
+<div class="stop-acts"><div class="acts-heading">&#127919; Activities</div><div class="act-row"><span class="act-badge act-couple">&#128100; Rigi boat + cogwheel round trip</span><a class="act-book" href="https://www.rigi.ch/" target="_blank">Book</a></div></div></div>
+</div>
+<div class="stop">
+<div class="stop-time">09:10</div><div class="stop-icon">&#128646;</div>
+<div class="stop-detail"><div class="stop-name">Cogwheel up Rigi Kulm <span class="must-see">&#9733; Must-See</span></div><div class="stop-desc">Europe's oldest mountain railway (1871) climbs to 1,798&thinsp;m. On a clear day: 13 lakes, the Black Forest and the Alps.</div>
+<div class="stop-imgs"><img src="https://images.pexels.com/photos/34345862/pexels-photo-34345862.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Mount Rigi over Lake Lucerne" loading="lazy"><img src="https://images.pexels.com/photos/34198332/pexels-photo-34198332.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Mount Rigi summit" loading="lazy"></div></div>
+</div>
+<div class="stop">
+<div class="stop-time">11:00</div><div class="stop-icon">&#9749;</div>
+<div class="stop-detail"><div class="stop-name">Rigi summit &mdash; coffee stop</div><div class="stop-desc">Break at Rigi Kulm's panorama terrace &mdash; the "Queen of the Mountains". Short summit loop for photos.</div><div class="stop-drive">35 min cogwheel from Vitznau</div></div>
+</div>
+<div class="stop">
+<div class="stop-time">12:15</div><div class="stop-icon">&#128646;</div>
+<div class="stop-detail"><div class="stop-name">Down via Rigi Kaltbad &amp; Weggis</div><div class="stop-desc">Cable car down to Weggis, then a 30-min boat back to Lucerne &mdash; a different view of the lake the whole way.</div></div>
+</div>
+<div class="stop">
+<div class="stop-time">13:30</div><div class="stop-icon">&#127860;</div>
+<div class="stop-detail"><div class="stop-name">Lunch: Dosa House</div><div class="stop-desc">South Indian dosas and thalis near the station &mdash; a quick, cheap veggie lunch before the train.</div></div>
+</div>
+<div class="stop">
+<div class="stop-time">14:30</div><div class="stop-icon">&#128646;</div>
+<div class="stop-detail"><div class="stop-name">Train to Interlaken</div><div class="stop-desc">The GoldenPass / Brünig line over the Brunig Pass &mdash; 2 hours of lake-and-mountain scenery. Sit left for lake views.</div><div class="stop-drive">2 hr scenic line from Lucerne</div></div>
+</div>
+<div class="stop">
+<div class="stop-time">16:30</div><div class="stop-icon">&#127968;</div>
+<div class="stop-detail"><div class="stop-name">Check in &mdash; Interlaken</div><div class="stop-desc">Interlaken is the adventure capital of Europe, sitting between Lake Thun and Lake Brienz with the Jungfrau massif straight ahead.</div></div>
+</div>
+<div class="stop">
+<div class="stop-time">17:30</div><div class="stop-icon">&#128694;</div>
+<div class="stop-detail"><div class="stop-name">H&ouml;heweg promenade</div><div class="stop-desc">The classic Interlaken stroll &mdash; watch tandem paragliders circle and land on the H&ouml;hematte lawn right in front of you.</div>
+<div class="stop-imgs"><img src="https://images.pexels.com/photos/33867089/pexels-photo-33867089.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Paragliding over Interlaken" loading="lazy"></div></div>
+</div>
+<div class="stop">
+<div class="stop-time">19:00</div><div class="stop-icon">&#127860;</div>
+<div class="stop-detail"><div class="stop-name">Dinner: Velo Caf&eacute; <span class="cafe-tag">Vegan</span></div><div class="stop-desc">Bike-shop caf&eacute; with great vegan bowls and coffee &mdash; a laid-back first dinner in Interlaken.</div></div>
+</div>
+</div>
+
+<div class="day day3">
+<div class="day-header"><span>&#127957;</span> Day 3 &mdash; Mon 3 Aug &middot; Jungfraujoch &mdash; Top of Europe</div>
+
+<div class="map-section">
+<div class="map-h">&#128205; Interlaken &rarr; Grindelwald &rarr; Jungfraujoch</div>
+<iframe loading="lazy" src="https://maps.google.com/maps?saddr=Interlaken&daddr=Grindelwald+to:Jungfraujoch&dirflg=t&output=embed" allowfullscreen></iframe>
+<a class="map-link" href="https://www.google.com/maps/dir/Interlaken/Grindelwald/Jungfraujoch" target="_blank">Open in Google Maps</a>
+</div>
+
+<div class="stop">
+<div class="stop-time">06:30</div><div class="stop-icon">&#128646;</div>
+<div class="stop-detail"><div class="stop-name">Early train to Grindelwald Terminal</div><div class="stop-desc">First trains beat the crowds. Use the Good Morning Ticket (up before 08:00, back by 13:00, ~CHF 169) to save ~CHF 35 each.</div>
+<div class="stop-drive">33 min from Interlaken Ost</div>
+<div class="stop-acts"><div class="acts-heading">&#127919; Activities</div><div class="act-row"><span class="act-badge act-couple">&#128100; Jungfraujoch tickets &amp; Good Morning Ticket</span><a class="act-book" href="https://www.jungfrau.ch/en-gb/" target="_blank">Book</a></div></div></div>
+</div>
+<div class="stop">
+<div class="stop-time">07:15</div><div class="stop-icon">&#128646;</div>
+<div class="stop-detail"><div class="stop-name">Eiger Express &amp; Jungfraubahn</div><div class="stop-desc">World's most modern cable car to Eigergletscher, then the century-old rack railway that tunnels 7&thinsp;km through the Eiger and M&ouml;nch. Brief stop at the Eismeer window for glacier views.</div><div class="stop-drive">41 min from Grindelwald Terminal</div></div>
+</div>
+<div class="stop">
+<div class="stop-time">08:00</div><div class="stop-icon">&#127957;</div>
+<div class="stop-detail"><div class="stop-name">Arrive Jungfraujoch <span class="must-see">&#9733; Must-See</span></div><div class="stop-desc">At 3,454&thinsp;m &mdash; the highest railway station in Europe. You're on top of the world: ice, snow and the view over 4,000&thinsp;m peaks.</div>
+<div class="stop-imgs"><img src="https://images.pexels.com/photos/32261843/pexels-photo-32261843.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Jungfraujoch Swiss Alps" loading="lazy"><img src="https://images.pexels.com/photos/35264970/pexels-photo-35264970.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Jungfrau peaks" loading="lazy"></div></div>
+</div>
+<div class="stop">
+<div class="stop-time">08:30</div><div class="stop-icon">&#127757;</div>
+<div class="stop-detail"><div class="stop-name">Sphinx Observatory &amp; Aletsch Glacier</div><div class="stop-desc">Take the lift up to the Sphinx terrace for the panorama: the Aletsch Glacier, longest in the Alps, with the view stretching to Italy, France and Germany.</div>
+<div class="stop-acts"><div class="acts-heading">&#127919; Activities</div><span class="act-badge act-couple">&#128100; Sphinx Terrace viewpoint &mdash; arrive before 10:00 for the clearest light</span></div></div>
+</div>
+<div class="stop">
+<div class="stop-time">09:30</div><div class="stop-icon">&#129382;</div>
+<div class="stop-detail"><div class="stop-name">Ice Palace</div><div class="stop-desc">A passage carved 30&thinsp;m beneath the glacier, lined with ice sculptures. Slippery but unforgettable.</div></div>
+</div>
+<div class="stop">
+<div class="stop-time">10:30</div><div class="stop-icon">&#127938;</div>
+<div class="stop-detail"><div class="stop-name">Snow Fun Park</div><div class="stop-desc">Summer tubing and snow discs on the glacier plateau &mdash; a bit of silly fun at 3,454&thinsp;m.</div></div>
+</div>
+<div class="stop">
+<div class="stop-time">12:00</div><div class="stop-icon">&#127859;</div>
+<div class="stop-detail"><div class="stop-name">Lunch: Restaurant Bollywood <span class="must-see">&#9733; Indian Day</span> <span class="cafe-tag">Indian</span></div><div class="stop-desc">The highest Indian restaurant in the world, at 3,454&thinsp;m &mdash; dal, butter chicken and naan with a glacier view. Your Indian-restaurant requirement, done at the summit.</div>
+<div class="stop-drive">On-site at Jungfraujoch, level opposite the Ice Palace</div></div>
+</div>
+<div class="stop">
+<div class="stop-time">13:00</div><div class="stop-icon">&#127860;</div>
+<div class="stop-detail"><div class="stop-name">Highest Lindt shop + post office</div><div class="stop-desc">World's highest Lindt chocolatier shop and Europe's highest post office &mdash; mail a postcard stamped at 3,454&thinsp;m.</div></div>
+</div>
+<div class="stop">
+<div class="stop-time">13:30</div><div class="stop-icon">&#128646;</div>
+<div class="stop-detail"><div class="stop-name">Descend</div><div class="stop-desc">Retrace the route &mdash; back in Interlaken around 15:30. The Good Morning Ticket's 13:00 return deadline keeps the pace moving.</div><div class="stop-drive">~2 hr back to Interlaken</div></div>
+</div>
+<div class="stop">
+<div class="stop-time">19:30</div><div class="stop-icon">&#127859;</div>
+<div class="stop-detail"><div class="stop-name">Dinner: India Village <span class="must-see">&#9733; Indian Day</span> <span class="cafe-tag">Indian</span></div><div class="stop-desc">Well-loved Interlaken Indian: butter chicken, shahi paneer, great naan. The perfect finish to your Indian day after the summit feast.</div>
+<div class="stop-drive">10 min walk from Interlaken West</div>
+<div class="stop-acts"><div class="acts-heading">&#127919; Activities</div><div class="act-row"><span class="act-badge act-couple">&#128100; Indian dinner night</span><a class="act-book" href="https://india-village.net/" target="_blank">Book</a></div></div></div>
+</div>
+</div>
+
+<div class="day day4">
+<div class="day-header"><span>&#129440;</span> Day 4 &mdash; Tue 4 Aug &middot; Paragliding, Grindelwald First &amp; Lauterbrunnen</div>
+
+<div class="map-section">
+<div class="map-h">&#128205; Interlaken &rarr; Grindelwald &rarr; Lauterbrunnen &rarr; Interlaken</div>
+<iframe loading="lazy" src="https://maps.google.com/maps?saddr=Interlaken&daddr=Grindelwald+to:Lauterbrunnen+to:Interlaken&dirflg=t&output=embed" allowfullscreen></iframe>
+<a class="map-link" href="https://www.google.com/maps/dir/Interlaken/Grindelwald/Lauterbrunnen/Interlaken" target="_blank">Open in Google Maps</a>
+</div>
+
+<div class="stop">
+<div class="stop-time">09:00</div><div class="stop-icon">&#129440;</div>
+<div class="stop-detail"><div class="stop-name">Tandem paragliding over Interlaken <span class="must-see">&#9733; Must-See</span></div><div class="stop-desc">The bucket-list flight &mdash; take off above Interlaken and float down to land on the H&ouml;hematte. ~CHF 180, 10&ndash;20 min in the air. Book ahead, it's peak season. Photos ~CHF 40 extra.</div>
+<div class="stop-drive">Pick-up / launch from Beatenberg, 20 min from Interlaken</div>
+<div class="stop-imgs"><img src="https://images.pexels.com/photos/13613013/pexels-photo-13613013.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Tandem paragliding Grindelwald" loading="lazy"></div>
+<div class="stop-acts"><div class="acts-heading">&#127919; Activities</div><div class="act-row"><span class="act-badge act-couple">&#128100; Tandem flight for two &mdash; same time slot</span><a class="act-book" href="https://www.skywings.ch/" target="_blank">Book</a></div></div></div>
+</div>
+<div class="stop">
+<div class="stop-time">10:45</div><div class="stop-icon">&#128646;</div>
+<div class="stop-detail"><div class="stop-desc">Train to Grindelwald, then the gondola up to First (25 min) &mdash; the mountain lifts are an attraction in themselves.</div><div class="stop-drive">33 min train from Interlaken</div><div class="stop-name">Train &amp; gondola to First</div></div>
+</div>
+<div class="stop">
+<div class="stop-time">11:30</div><div class="stop-icon">&#127957;</div>
+<div class="stop-detail"><div class="stop-name">First Cliff Walk by Tissot</div><div class="stop-desc">A steel walkway hugging the sheer cliff, ending on a suspension bridge with a glass floor over the Eiger north face. Free with your cable car ticket.</div>
+<div class="stop-imgs"><img src="https://images.pexels.com/photos/13612696/pexels-photo-13612696.jpeg?auto=compress&cs=tinysrgb&w=800" alt="First Cliff Walk, Grindelwald" loading="lazy"></div>
+<div class="stop-acts"><div class="acts-heading">&#127919; Activities</div><div class="act-row"><span class="act-badge act-couple">&#128100; First cable car &amp; Cliff Walk</span><a class="act-book" href="https://www.jungfrau.ch/en-gb/" target="_blank">Book</a></div></div></div>
+</div>
+<div class="stop">
+<div class="stop-time">12:00</div><div class="stop-icon">&#127860;</div>
+<div class="stop-detail"><div class="stop-name">Lunch at the summit restaurant</div><div class="stop-desc">Mountain restaurant on the First terrace &mdash; r&ouml;sti, soup and hot chocolate above the clouds.</div></div>
+</div>
+<div class="stop">
+<div class="stop-time">13:00</div><div class="stop-icon">&#127797;</div>
+<div class="stop-detail"><div class="stop-name">Bachalpsee hike</div><div class="stop-desc">The classic First hike &mdash; 50 gentle minutes to twin alpine lakes that mirror the Schreckhorn massif. Go early if you want the mirror-still reflection.</div>
+<div class="stop-drive">50 min walk from First station</div></div>
+</div>
+<div class="stop">
+<div class="stop-time">15:15</div><div class="stop-icon">&#128646;</div>
+<div class="stop-detail"><div class="stop-name">Gondola down &amp; train to Lauterbrunnen</div><div class="stop-desc">Down from First, then the valley train via Zweil&uuml;tschinen into the Lauterbrunnen valley.</div><div class="stop-drive">35 min from Grindelwald</div></div>
+</div>
+<div class="stop">
+<div class="stop-time">16:00</div><div class="stop-icon">&#128167;</div>
+<div class="stop-detail"><div class="stop-name">Staubbach Falls &amp; the valley of 72 waterfalls <span class="must-see">&#9733; Must-See</span></div><div class="stop-desc">Lauterbrunnen's 297&thinsp;m Staubbach falls plunge straight off the cliff beside the village &mdash; the inspiration for Tolkien's Rivendell. Walk the flat valley path past waterfall after waterfall.</div>
+<div class="stop-imgs"><img src="https://images.pexels.com/photos/34242011/pexels-photo-34242011.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Lauterbrunnen valley" loading="lazy"><img src="https://images.pexels.com/photos/38100010/pexels-photo-38100010.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Lauterbrunnen waterfall" loading="lazy"></div>
+<div class="stop-acts"><div class="acts-heading">&#127919; Activities</div><span class="act-badge act-couple">&#128100; Walk to Staubbach &mdash; the spray feels amazing on a warm day</span></div></div>
+</div>
+<div class="stop">
+<div class="stop-time">18:00</div><div class="stop-icon">&#128646;</div>
+<div class="stop-detail"><div class="stop-name">Return to Interlaken</div><div class="stop-desc">PostBus or train back along the valley &mdash; golden-hour light on the cliffs.</div><div class="stop-drive">25 min from Lauterbrunnen</div></div>
+</div>
+<div class="stop">
+<div class="stop-time">19:30</div><div class="stop-icon">&#127860;</div>
+<div class="stop-detail"><div class="stop-name">Dinner: Fondue Villa <span class="cafe-tag">Vegan</span></div><div class="stop-desc">Traditional cheese fondue &mdash; plus one of the few vegan almond-milk fondues in the Alps. A properly Swiss send-off.</div></div>
+</div>
+</div>
+
+<div class="day day5">
+<div class="day-header"><span>&#128646;</span> Day 5 &mdash; Wed 5 Aug &middot; Harder Kulm &amp; Home</div>
+
+<div class="map-section">
+<div class="map-h">&#128205; Interlaken &rarr; Harder Kulm &rarr; Zurich Airport</div>
+<iframe loading="lazy" src="https://maps.google.com/maps?saddr=Interlaken&daddr=Harder+Kulm+to:Zurich+Airport&dirflg=t&output=embed" allowfullscreen></iframe>
+<a class="map-link" href="https://www.google.com/maps/dir/Interlaken/Harder+Kulm/Zurich+Airport" target="_blank">Open in Google Maps</a>
+</div>
+
+<div class="stop">
+<div class="stop-time">09:00</div><div class="stop-icon">&#128646;</div>
+<div class="stop-detail"><div class="stop-name">Harder Kulm funicular <span class="must-see">&#9733; Must-See</span></div><div class="stop-desc">Interlaken's own mountain &mdash; a 10-min funicular to the Two Lakes Bridge, a glass-floor platform over Lake Thun and Lake Brienz with the Eiger, M&ouml;nch and Jungfrau dead ahead.</div>
+<div class="stop-drive">10 min funicular from Interlaken Ost</div>
+<div class="stop-imgs"><img src="https://images.pexels.com/photos/12301006/pexels-photo-12301006.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Harder Kulm over Lake Brienz" loading="lazy"><img src="https://images.pexels.com/photos/13818274/pexels-photo-13818274.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Interlaken from Harder Kulm" loading="lazy"></div>
+<div class="stop-acts"><div class="acts-heading">&#127919; Activities</div><div class="act-row"><span class="act-badge act-couple">&#128100; Two Lakes Bridge &mdash; best panorama of the trip</span><a class="act-book" href="https://www.jungfrau.ch/en-gb/harder-kulm" target="_blank">Book</a></div></div></div>
+</div>
+<div class="stop">
+<div class="stop-time">10:30</div><div class="stop-icon">&#127863;</div>
+<div class="stop-detail"><div class="stop-name">Last chocolate run</div><div class="stop-desc">Grab vegan pralines from Max Chocolatier, then one last H&ouml;heweg stroll before checkout.</div></div>
+</div>
+<div class="stop">
+<div class="stop-time">11:00</div><div class="stop-icon">&#127968;</div>
+<div class="stop-detail"><div class="stop-name">Checkout</div><div class="stop-desc">Bags ready, out by 11:00.</div></div>
+</div>
+<div class="stop">
+<div class="stop-time">11:30</div><div class="stop-icon">&#128646;</div>
+<div class="stop-detail"><div class="stop-name">Train to Zurich Airport</div><div class="stop-desc">Direct IC from Interlaken Ost &mdash; 2 hours. Flight isn't until 20:55, so there's time for a relaxed lunch stop in Bern or Zurich old town on the way if you fancy it.</div><div class="stop-drive">2 hr direct to Zurich Flughafen</div></div>
+</div>
+<div class="stop">
+<div class="stop-time">20:55</div><div class="stop-icon">&#9992;&#65039;</div>
+<div class="stop-detail"><div class="stop-name">Fly Zurich &rarr; Dublin</div><div class="stop-desc">Aer Lingus direct, home late evening. Auf Wiedersehen, Schweiz!</div></div>
+</div>
+</div>
+
+<div class="info-box">
+<h3>&#127869; Food &amp; Drink</h3>
+<ul>
+<li>&#127793; Tibits, Lucerne &mdash; pay-by-weight vegan &amp; veggie buffet by the station (our Day 1 lunch)</li>
+<li>&#127859; Dosa House, Lucerne &mdash; South Indian dosas &amp; thalis, quick and cheap (Day 2 lunch)</li>
+<li>&#127859; Restaurant Bollywood, Jungfraujoch &mdash; the highest Indian restaurant in the world, 3,454&thinsp;m (Day 3 summit lunch)</li>
+<li>&#127859; <a href="https://india-village.net/" target="_blank">India Village, Interlaken</a> &mdash; butter chicken, shahi paneer, excellent naan (Day 3 dinner)</li>
+<li>&#127860; <a href="https://tandooriinterlaken.ch/" target="_blank">Tandoori Interlaken</a> &mdash; halal Indian, back-up if India Village is full</li>
+<li>&#127793; Velo Caf&eacute;, Interlaken &mdash; vegan bowls and coffee in a bike shop (Day 2 dinner)</li>
+<li>&#127793; Aarburg Caf&eacute;, Interlaken &mdash; vegan pancakes, Buddha bowls, great brunch</li>
+<li>&#127861; Fondue Villa, Interlaken &mdash; cheese fondue plus one of the few vegan almond-milk fondues (Day 4 dinner)</li>
+<li>&#127851; Max Chocolatier, Interlaken &mdash; high-end Swiss chocolate with vegan praline range</li>
+</ul>
+</div>
+
+<div class="info-box">
+<h3>&#128646; Transport &amp; Passes</h3>
+<ul>
+<li>Half Fare Card (CHF 120) &mdash; halves every rail/cable-car/boat fare; best value if you're just doing this one trip</li>
+<li>Swiss Travel Pass &mdash; free trains/boats plus free Harder Kulm &amp; Rigi and 25% off Jungfraujoch; pays off if you'll add lots of side trips</li>
+<li>Use the <a href="https://www.sbb.ch/" target="_blank">SBB app</a> for all live train times &amp; platforms</li>
+<li>Jungfraujoch seat reservation +CHF 10 (May&ndash;Oct) &mdash; book with your ticket</li>
+<li>2nd class is perfectly fine &mdash; every route in this plan is a direct connection</li>
+</ul>
+</div>
+
+<div class="info-box">
+<h3>&#128161; Tips</h3>
+<ul>
+<li>Days 3 &amp; 4 are interchangeable &mdash; check the <a href="https://www.meteoswiss.admin.ch/" target="_blank">MeteoSwiss</a> forecast the night before. If the summit is clear, do Jungfraujoch; if the valley is sunny, fly and visit First/Lauterbrunnen.</li>
+<li>Book paragliding AND Jungfraujoch in advance &mdash; early August is peak season</li>
+<li>Sunny, layers, sunglasses &mdash; it's alpine winter on the Jungfraujoch even in August (t-shirt down below, jacket up top)</li>
+<li>Carry passports &mdash; needed at both airports</li>
+<li>Mountain restaurants take cards, but keep ~CHF 100 cash for stalls and lockers</li>
+<li>Golden Hour on Harder Kulm is sunrise &mdash; worth one early morning</li>
+</ul>
+</div>
+
+</div><!-- /container -->
+
+<div class="footer">Created with love by Prashanth</div>
+
+<div id="lightbox" onclick="closeLightbox()">
+<span class="close" onclick="closeLightbox()">&times;</span>
+<button class="lb-nav lb-prev" onclick="event.stopPropagation();prevImage()">&#8249;</button>
+<button class="lb-nav lb-next" onclick="event.stopPropagation();nextImage()">&#8250;</button>
+<img id="lightbox-img" src="" alt="" onclick="event.stopPropagation()">
+<div class="lb-counter" id="lb-counter"></div>
+</div>
+
+<script>
+// Lightbox gallery
+var lbImages=[],lbIdx=0;
+document.querySelectorAll('.stop-imgs img').forEach(function(img){img.addEventListener('click',function(e){e.stopPropagation();var p=img.closest('.stop-imgs');lbImages=[];Array.from(p.querySelectorAll('img')).forEach(function(s){if(lbImages.indexOf(s.src)===-1)lbImages.push(s.src)});lbIdx=lbImages.indexOf(this.src);openLightbox(this.src)})});
+function openLightbox(src){document.getElementById('lightbox-img').src=src;document.getElementById('lightbox').classList.add('active');document.body.style.overflow='hidden';document.getElementById('lb-counter').textContent=(lbIdx+1)+' / '+lbImages.length}
+function closeLightbox(){document.getElementById('lightbox').classList.remove('active');document.body.style.overflow=''}
+function prevImage(){if(!lbImages.length)return;lbIdx=(lbIdx-1+lbImages.length)%lbImages.length;document.getElementById('lightbox-img').src=lbImages[lbIdx];document.getElementById('lb-counter').textContent=(lbIdx+1)+' / '+lbImages.length}
+function nextImage(){if(!lbImages.length)return;lbIdx=(lbIdx+1)%lbImages.length;document.getElementById('lightbox-img').src=lbImages[lbIdx];document.getElementById('lb-counter').textContent=(lbIdx+1)+' / '+lbImages.length}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLightbox();if(!document.getElementById('lightbox').classList.contains('active'))return;if(e.key==='ArrowLeft')prevImage();if(e.key==='ArrowRight')nextImage()});
+(function(){var lb=document.getElementById('lightbox'),sx=0;lb.addEventListener('touchstart',function(e){sx=e.changedTouches[0].screenX},{passive:true});lb.addEventListener('touchend',function(e){var dx=sx-e.changedTouches[0].screenX;if(Math.abs(dx)>50){if(dx>0)nextImage();else prevImage()}},{passive:true})})();
+// Hero slideshow — auto + dot click + swipe
+let slideIdx=0,heroTimer;const hSlides=document.querySelectorAll('.hero-slide'),hDots=document.querySelectorAll('.hero-dot');
+function goToHero(n){hSlides.forEach(function(s){s.classList.remove('active')});hDots.forEach(function(d){d.classList.remove('active')});slideIdx=(n+hSlides.length)%hSlides.length;hSlides[slideIdx].classList.add('active');hDots[slideIdx].classList.add('active');clearInterval(heroTimer);if(hSlides.length>1)heroTimer=setInterval(function(){goToHero(slideIdx+1)},4500)}
+hDots.forEach(function(dot,i){dot.addEventListener('click',function(){goToHero(i)})});
+(function(){var h=document.querySelector('.hero'),sx=0;if(!h)return;h.addEventListener('touchstart',function(e){sx=e.changedTouches[0].screenX},{passive:true});h.addEventListener('touchend',function(e){var dx=sx-e.changedTouches[0].screenX;if(Math.abs(dx)>40){if(dx>0)goToHero(slideIdx+1);else goToHero(slideIdx-1)}},{passive:true})})();
+if(hSlides.length>1)heroTimer=setInterval(function(){goToHero(slideIdx+1)},4500);
+</script>
+
+</body>
+</html>
