@@ -83,6 +83,16 @@ a.act-book:hover{background:#1e40af;color:#fff;border-color:#1e40af}
 .info-box li::before{content:"\2022";color:#2a9d8f;font-weight:bold}
 .info-box a{color:#1a73e8;text-decoration:none}
 .info-box a:hover{text-decoration:underline}
+.pt-table{width:100%;border-collapse:collapse;font-size:.78rem;color:#4b5563;margin-top:.4rem}
+.pt-table th{font-size:.62rem;text-transform:uppercase;letter-spacing:.5px;color:#9ca3af;text-align:left;padding:.35rem .5rem;border-bottom:2px solid #e5e7eb}
+.pt-table td{padding:.4rem .5rem;border-bottom:1px solid #f3f4f6;vertical-align:top}
+.pt-table tr:last-child td{border-bottom:none}
+.pt-table .pt-day{font-weight:600;white-space:nowrap}
+.pass-tag{display:inline-block;font-size:.62rem;font-weight:600;padding:.12rem .45rem;border-radius:20px;white-space:nowrap}
+.pass-inc{background:#ecfdf5;color:#059669}
+.pass-off25{background:#fef3c7;color:#b45309}
+.pass-off50{background:#ede9fe;color:#6d28d9}
+@media(max-width:600px){.pt-table{font-size:.72rem}.pt-table td,.pt-table th{padding:.3rem .4rem}}
 .map-section{background:#fff;border-radius:16px;box-shadow:0 1px 3px rgba(0,0,0,.06),0 1px 2px rgba(0,0,0,.04);overflow:hidden;margin-bottom:1.5rem}
 .map-section .map-h{padding:1rem 1.2rem;font-size:.95rem;font-weight:600}
 .map-section iframe{width:100%;height:380px;border:none;display:block}
@@ -109,7 +119,7 @@ a.act-book:hover{background:#1e40af;color:#fff;border-color:#1e40af}
 <div class="hero-slide" style="background-image:url(https://images.pexels.com/photos/33867089/pexels-photo-33867089.jpeg?auto=compress&cs=tinysrgb&w=1600)"><span style="position:absolute;bottom:7rem;right:1rem;z-index:3;background:rgba(0,0,0,.5);color:#fff;font-size:.72rem;padding:.25rem .55rem;border-radius:20px">&#128205; Paragliding, Grindelwald</span></div>
 <div class="hero-content">
 <h1>Swiss Alps Getaway</h1>
-<p class="sub">Dublin &rarr; Zurich &rarr; Lucerne &rarr; Interlaken &rarr; Dublin</p>
+<p class="sub">Dublin &rarr; Zurich &rarr; Meggen &rarr; Unterseen &rarr; Dublin</p>
 <p class="meta">Sat 1 &ndash; Wed 5 Aug 2026 &bull; 2 travellers &bull; by Swiss Travel Pass rail</p>
 </div>
 <div class="hero-dots">
@@ -122,15 +132,15 @@ a.act-book:hover{background:#1e40af;color:#fff;border-color:#1e40af}
 <div class="container">
 
 <p class="plan-title">Switzerland &bull; Sat 1 &ndash; Wed 5 Aug 2026</p>
-<p class="plan-sub">Dublin &rarr; Zurich &rarr; Lucerne &rarr; Interlaken &rarr; Zurich &bull; 5 days &bull; 2 adults &bull; trains, boats &amp; cable cars on the Swiss Travel Pass</p>
+<p class="plan-sub">Dublin &rarr; Zurich &rarr; Meggen (Lake Lucerne) &rarr; Unterseen (Interlaken) &rarr; Zurich &bull; 5 days &bull; 2 adults &bull; trains, boats &amp; cable cars on the Swiss Travel Pass</p>
 
 <div class="day day1">
-<div class="day-header"><span>&#9992;&#65039;</span> Day 1 &mdash; Sat 1 Aug &middot; Dublin to Lucerne</div>
+<div class="day-header"><span>&#9992;&#65039;</span> Day 1 &mdash; Sat 1 Aug &middot; Lindt Chocolate &amp; Night at Meggen</div>
 
 <div class="map-section">
-<div class="map-h">&#128205; Zurich Airport &rarr; Lucerne</div>
-<iframe loading="lazy" src="https://maps.google.com/maps?saddr=Zurich+Airport&daddr=Lucerne&dirflg=t&output=embed" allowfullscreen></iframe>
-<a class="map-link" href="https://www.google.com/maps/dir/Zurich+Airport/Lucerne?travelmode=transit" target="_blank">Open transit route in Google Maps</a>
+<div class="map-h">&#128205; Zurich Airport &rarr; Kilchberg (Lindt) &rarr; Meggen</div>
+<iframe loading="lazy" src="https://maps.google.com/maps?saddr=Zurich+Airport&daddr=Kilchberg+to:Meggen&dirflg=t&output=embed" allowfullscreen></iframe>
+<a class="map-link" href="https://www.google.com/maps/dir/Zurich+Airport/Kilchberg/Meggen?travelmode=transit" target="_blank">Open transit route in Google Maps</a>
 </div>
 
 <div class="stop">
@@ -139,87 +149,94 @@ a.act-book:hover{background:#1e40af;color:#fff;border-color:#1e40af}
 </div>
 <div class="stop">
 <div class="stop-time">10:30</div><div class="stop-icon">&#128739;</div>
-<div class="stop-detail"><div class="stop-name">Arrive Zurich Airport</div><div class="stop-desc">Clear immigration, then grab your Swiss Travel Pass / Half Fare Card at the SBB counter in the arrivals hall.</div></div>
+<div class="stop-detail"><div class="stop-name">Arrive Zurich Airport</div><div class="stop-desc">Clear immigration, then grab your Swiss Travel Pass at the SBB counter in the arrivals hall.</div></div>
 </div>
 <div class="stop">
-<div class="stop-time">11:20</div><div class="stop-icon">&#128646;</div>
-<div class="stop-detail"><div class="stop-name">Train to Lucerne</div><div class="stop-desc">Direct IC/IR from the station under the airport &mdash; 50 min, seats on the right side for lake views.</div><div class="stop-drive">IC/IR direct &middot; 50 min from Zurich Airport &middot; free with pass</div></div>
+<div class="stop-time">11:15</div><div class="stop-icon">&#128646;</div>
+<div class="stop-detail"><div class="stop-name">Train to Kilchberg &mdash; Lindt</div><div class="stop-desc">S-Bahn via Zurich HB to Kilchberg, the lakeside home of the Lindt &amp; Spr&uuml;ngli factory.</div><div class="stop-drive">Train &middot; ~30 min via Zurich HB &middot; free with pass</div></div>
 </div>
 <div class="stop">
-<div class="stop-time">12:15</div><div class="stop-icon">&#127980;</div>
-<div class="stop-detail"><div class="stop-name">Drop bags, then lunch</div><div class="stop-desc">Drop luggage at the hotel (check-in is usually 14:00).</div></div>
+<div class="stop-time">11:45</div><div class="stop-icon">&#127853;</div>
+<div class="stop-detail"><div class="stop-name">Lindt Home of Chocolate <span class="must-see">&#9733; Must-See</span></div><div class="stop-desc">The 9-m chocolate fountain, a bean-to-bar museum and the world's largest Lindt shop. Book a time slot online (CHF 17 each) and leave by 2 PM &mdash; lunch at the Lindt Caf&eacute; saves time.</div>
+<div class="stop-imgs"><img src="https://media.myswitzerland.com/image/fetch/c_lfill,g_auto,w_800,h_450/f_auto,q_80,fl_keep_iptc/https://www.myswitzerland.com/-/media/dam/resources/experience/l/i/lindt%20museum/meta%20page%20image%20all%20season/58499_32001800.jpeg" alt="Lindt Home of Chocolate, Kilchberg" loading="lazy"></div>
+<div class="stop-acts"><div class="acts-heading">&#127919; Activities</div><div class="act-row"><span class="act-badge act-couple">&#128100; Museum tour + chocolate fountain</span><a class="act-book" href="https://tickets.lindt-home-of-chocolate.com/" target="_blank">Book</a></div></div></div>
 </div>
 <div class="stop">
-<div class="stop-time">12:30</div><div class="stop-icon">&#127860;</div>
-<div class="stop-detail"><div class="stop-name">Lunch: Tibits <span class="cafe-tag">Vegan</span></div><div class="stop-desc">Pay-by-weight vegan &amp; veggie buffet right at Lucerne station &mdash; best-value lunch in town.</div></div>
+<div class="stop-time">14:00</div><div class="stop-icon">&#128646;</div>
+<div class="stop-detail"><div class="stop-name">Train to Lucerne</div><div class="stop-desc">IC/IR back through Zurich and on to Lucerne &mdash; about an hour.</div><div class="stop-drive">Train &middot; IC/IR, ~1h to Lucerne &middot; free with pass</div></div>
 </div>
 <div class="stop">
-<div class="stop-time">13:45</div><div class="stop-icon">&#127756;</div>
+<div class="stop-time">15:30</div><div class="stop-icon">&#127968;</div>
+<div class="stop-detail"><div class="stop-name">Check in at Meggen</div><div class="stop-desc">8-min train along the lake to Meggen. Airbnb at <strong>Obermattstrasse, 6045 Meggen</strong> &mdash; a short walk from the station. Drop bags, then back into Lucerne for the evening.</div><div class="stop-drive">Train &middot; 8 min from Lucerne &middot; free with pass</div></div>
+</div>
+<div class="stop">
+<div class="stop-time">16:30</div><div class="stop-icon">&#127756;</div>
 <div class="stop-detail"><div class="stop-name">Chapel Bridge &amp; Water Tower <span class="must-see">&#9733; Must-See</span></div><div class="stop-desc">Europe's oldest covered wooden bridge (1333) with its octagonal Water Tower &mdash; the postcard shot of Lucerne.</div>
 <div class="stop-imgs"><img src="https://media.myswitzerland.com/image/fetch/c_lfill,g_auto,w_800,h_450/f_auto,q_80,fl_keep_iptc/https://www.myswitzerland.com/-/media/celum%20connect/2023/04/19/12/58/25/lucerne-kappelbrcke.jpg" alt="Chapel Bridge, Lucerne" loading="lazy"></div>
 <div class="stop-acts"><div class="acts-heading">&#127919; Activities</div><span class="act-badge act-couple">&#128100; Walk the bridge, read the 17th-century roof paintings</span></div></div>
 </div>
 <div class="stop">
-<div class="stop-time">14:30</div><div class="stop-icon">&#129409;</div>
+<div class="stop-time">17:15</div><div class="stop-icon">&#129409;</div>
 <div class="stop-detail"><div class="stop-name">Lion Monument</div><div class="stop-desc">The dying lion carved into sandstone &mdash; Mark Twain called it "the most mournful and moving piece of stone in the world". Free, 10 min from the old town.</div>
 <div class="stop-imgs"><img src="https://media.myswitzerland.com/image/fetch/c_lfill,g_auto,w_800,h_450/f_auto,q_80,fl_keep_iptc/https://www.myswitzerland.com/-/media/dam/resources/experience/l/o/loewendenkmal/images%20all%20season/27982_32001800.jpeg" alt="Lion Monument, Lucerne" loading="lazy"></div></div>
 </div>
 <div class="stop">
-<div class="stop-time">15:15</div><div class="stop-icon">&#128694;</div>
-<div class="stop-detail"><div class="stop-name">Old Town &amp; Musegg Wall</div><div class="stop-desc">Wander Weinmarkt, the Jesuit Church and the cobbled lanes, then climb the Zyt Tower on the 1400s city wall for a rooftop view.</div></div>
+<div class="stop-time">18:30</div><div class="stop-icon">&#127860;</div>
+<div class="stop-detail"><div class="stop-name">Dinner by the lake</div><div class="stop-desc">Lakeside Swiss dinner &mdash; r&ouml;sti, Z&uuml;rcher Geschnetzeltes, or a fondue to share. Plenty of vegetarian options in the old town (Tibits is a great pick).</div></div>
 </div>
 <div class="stop">
-<div class="stop-time">17:30</div><div class="stop-icon">&#127968;</div>
-<div class="stop-detail"><div class="stop-name">Check in &amp; rest</div><div class="stop-desc">Settle in, freshen up &mdash; the balcony comes out for an aperitivo overlooking the rooftops.</div></div>
-</div>
-<div class="stop">
-<div class="stop-time">19:00</div><div class="stop-icon">&#127860;</div>
-<div class="stop-detail"><div class="stop-name">Dinner by the lake</div><div class="stop-desc">Lakeside Swiss dinner &mdash; rösti, Zürcher Geschnetzeltes, or a fondue to share. Plenty of vegetarian options in the old town.</div></div>
+<div class="stop-time">20:45</div><div class="stop-icon">&#127967;</div>
+<div class="stop-detail"><div class="stop-name">Night at Meggen</div><div class="stop-desc">8-min train back to the lakeside Airbnb &mdash; breakfast on the balcony overlooking the water before tomorrow's boat to Rigi.</div><div class="stop-drive">Train &middot; 8 min from Lucerne &middot; free with pass</div></div>
 </div>
 </div>
 
 <div class="day day2">
-<div class="day-header"><span>&#128646;</span> Day 2 &mdash; Sun 2 Aug &middot; Mount Rigi &amp; On to Interlaken</div>
+<div class="day-header"><span>&#128646;</span> Day 2 &mdash; Sun 2 Aug &middot; Mount Rigi &amp; On to Unterseen</div>
 
 <div class="map-section">
-<div class="map-h">&#128205; Lucerne &rarr; Vitznau (Rigi) &rarr; Interlaken</div>
-<iframe loading="lazy" src="https://maps.google.com/maps?saddr=Lucerne&daddr=Vitznau+to:Interlaken&dirflg=t&output=embed" allowfullscreen></iframe>
-<a class="map-link" href="https://www.google.com/maps/dir/Lucerne/Vitznau/Interlaken?travelmode=transit" target="_blank">Open transit route in Google Maps</a>
+<div class="map-h">&#128205; Meggen &rarr; Vitznau (Rigi) &rarr; Unterseen</div>
+<iframe loading="lazy" src="https://maps.google.com/maps?saddr=Meggen&daddr=Vitznau+to:Unterseen&dirflg=t&output=embed" allowfullscreen></iframe>
+<a class="map-link" href="https://www.google.com/maps/dir/Meggen/Vitznau/Unterseen?travelmode=transit" target="_blank">Open transit route in Google Maps</a>
 </div>
 
 <div class="stop">
 <div class="stop-time">08:00</div><div class="stop-icon">&#9973;</div>
-<div class="stop-detail"><div class="stop-name">Boat across Lake Lucerne</div><div class="stop-desc">1-hour paddle-steamer cruise from Lucerne to Vitznau &mdash; the classic way to approach the Rigi. Free with a Swiss Travel Pass.</div>
+<div class="stop-detail"><div class="stop-name">Boat across Lake Lucerne</div><div class="stop-desc">Paddle-steamer from the Meggen pier, right by the Airbnb, to Vitznau &mdash; no need to go into Lucerne. Free with a Swiss Travel Pass.</div>
+<div class="stop-drive">Boat &middot; 35 min from Meggen pier &middot; free with pass</div>
 <div class="stop-acts"><div class="acts-heading">&#127919; Activities</div><div class="act-row"><span class="act-badge act-couple">&#128100; Rigi boat + cogwheel round trip</span><a class="act-book" href="https://www.rigi.ch/" target="_blank">Book</a></div></div></div>
 </div>
 <div class="stop">
-<div class="stop-time">09:10</div><div class="stop-icon">&#128646;</div>
+<div class="stop-time">08:45</div><div class="stop-icon">&#128646;</div>
 <div class="stop-detail"><div class="stop-name">Cogwheel up Rigi Kulm <span class="must-see">&#9733; Must-See</span></div><div class="stop-desc">Europe's oldest mountain railway (1871) climbs to 1,798&thinsp;m. On a clear day: 13 lakes, the Black Forest and the Alps.</div>
+<div class="stop-drive">Cogwheel train &middot; 35 min from Vitznau &middot; free with pass</div>
 <div class="stop-imgs"><img src="https://media.myswitzerland.com/image/fetch/c_lfill,g_auto,w_800,h_450/f_auto,q_80,fl_keep_iptc/https://www.myswitzerland.com/-/media/celum%20connect/2024/11/19/14/01/22/rigi-kulm-aerial.jpg" alt="Mount Rigi over Lake Lucerne" loading="lazy"><img src="https://media.myswitzerland.com/image/fetch/c_lfill,g_auto,w_800,h_450/f_auto,q_80,fl_keep_iptc/https://www.myswitzerland.com/-/media/celum%20connect/2022/12/22/12/28/44/rigi-kulm-rigi-railway.jpg" alt="Mount Rigi summit" loading="lazy"></div></div>
 </div>
 <div class="stop">
-<div class="stop-time">11:00</div><div class="stop-icon">&#9749;</div>
-<div class="stop-detail"><div class="stop-name">Rigi summit &mdash; coffee stop</div><div class="stop-desc">Break at Rigi Kulm's panorama terrace &mdash; the "Queen of the Mountains". Short summit loop for photos.</div><div class="stop-drive">35 min cogwheel from Vitznau</div></div>
+<div class="stop-time">09:45</div><div class="stop-icon">&#9749;</div>
+<div class="stop-detail"><div class="stop-name">Rigi summit &mdash; coffee stop</div><div class="stop-desc">Break at Rigi Kulm's panorama terrace &mdash; the "Queen of the Mountains". Short summit loop for photos.</div></div>
 </div>
 <div class="stop">
-<div class="stop-time">12:15</div><div class="stop-icon">&#128646;</div>
-<div class="stop-detail"><div class="stop-name">Down via Rigi Kaltbad &amp; Weggis</div><div class="stop-desc">Cable car down to Weggis, then a 30-min boat back to Lucerne &mdash; a different view of the lake the whole way.</div></div>
+<div class="stop-time">11:15</div><div class="stop-icon">&#128646;</div>
+<div class="stop-detail"><div class="stop-name">Down via Rigi Kaltbad &amp; Weggis</div><div class="stop-desc">Cogwheel down to Kaltbad, cable car to Weggis, then the boat back to Lucerne &mdash; a different view of the lake the whole way.</div>
+<div class="stop-drive">Cable car + boat &middot; ~1h to Lucerne &middot; free with pass</div></div>
 </div>
 <div class="stop">
-<div class="stop-time">13:30</div><div class="stop-icon">&#127860;</div>
+<div class="stop-time">12:30</div><div class="stop-icon">&#127860;</div>
 <div class="stop-detail"><div class="stop-name">Lunch: Dosa House</div><div class="stop-desc">South Indian dosas and thalis near the station &mdash; a quick, cheap veggie lunch before the train.</div></div>
 </div>
 <div class="stop">
-<div class="stop-time">14:30</div><div class="stop-icon">&#128646;</div>
-<div class="stop-detail"><div class="stop-name">Train to Interlaken</div><div class="stop-desc">The GoldenPass / Brünig line over the Brunig Pass &mdash; 2 hours of lake-and-mountain scenery. Sit left for lake views.</div><div class="stop-drive">Luzern&ndash;Interlaken Express &middot; ~2 hr from Lucerne &middot; free with pass</div></div>
+<div class="stop-time">14:00</div><div class="stop-icon">&#128646;</div>
+<div class="stop-detail"><div class="stop-name">Train to Unterseen</div><div class="stop-desc">The Luzern&ndash;Interlaken Express over the Br&uuml;nig Pass (2h), then a 5-min hop from Interlaken Ost to Unterseen station.</div>
+<div class="stop-drive">Train &middot; 2h05 via Interlaken Ost &middot; free with pass</div></div>
 </div>
 <div class="stop">
-<div class="stop-time">16:30</div><div class="stop-icon">&#127968;</div>
-<div class="stop-detail"><div class="stop-name">Check in &mdash; Interlaken</div><div class="stop-desc">Interlaken is the adventure capital of Europe, sitting between Lake Thun and Lake Brienz with the Jungfrau massif straight ahead.</div></div>
+<div class="stop-time">16:15</div><div class="stop-icon">&#127968;</div>
+<div class="stop-detail"><div class="stop-name">Check in &mdash; Unterseen</div><div class="stop-desc">Airbnb at <strong>Oberdorf 2, 3800 Unterseen</strong> &mdash; Interlaken's quieter historic twin across the Aare, 5 min from Interlaken West.</div></div>
 </div>
 <div class="stop">
 <div class="stop-time">17:30</div><div class="stop-icon">&#128694;</div>
 <div class="stop-detail"><div class="stop-name">H&ouml;heweg promenade</div><div class="stop-desc">The classic Interlaken stroll &mdash; watch tandem paragliders circle and land on the H&ouml;hematte lawn right in front of you.</div>
+<div class="stop-drive">Walk &middot; 10 min from Unterseen</div>
 <div class="stop-imgs"><img src="https://images.pexels.com/photos/33867089/pexels-photo-33867089.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Paragliding over Interlaken" loading="lazy"></div></div>
 </div>
 <div class="stop">
@@ -232,20 +249,20 @@ a.act-book:hover{background:#1e40af;color:#fff;border-color:#1e40af}
 <div class="day-header"><span>&#127957;</span> Day 3 &mdash; Mon 3 Aug &middot; Jungfraujoch &mdash; Top of Europe</div>
 
 <div class="map-section">
-<div class="map-h">&#128205; Interlaken &rarr; Grindelwald &rarr; Jungfraujoch</div>
-<iframe loading="lazy" src="https://maps.google.com/maps?saddr=Interlaken&daddr=Grindelwald+to:Jungfraujoch&dirflg=t&output=embed" allowfullscreen></iframe>
-<a class="map-link" href="https://www.google.com/maps/dir/Interlaken/Grindelwald/Jungfraujoch?travelmode=transit" target="_blank">Open transit route in Google Maps</a>
+<div class="map-h">&#128205; Unterseen &rarr; Grindelwald &rarr; Jungfraujoch</div>
+<iframe loading="lazy" src="https://maps.google.com/maps?saddr=Unterseen&daddr=Grindelwald+to:Jungfraujoch&dirflg=t&output=embed" allowfullscreen></iframe>
+<a class="map-link" href="https://www.google.com/maps/dir/Unterseen/Grindelwald/Jungfraujoch?travelmode=transit" target="_blank">Open transit route in Google Maps</a>
 </div>
 
 <div class="stop">
 <div class="stop-time">06:30</div><div class="stop-icon">&#128646;</div>
 <div class="stop-detail"><div class="stop-name">Early train to Grindelwald Terminal</div><div class="stop-desc">First trains beat the crowds. Use the Good Morning Ticket (up before 08:00, back by 13:00, ~CHF 169) to save ~CHF 35 each.</div>
-<div class="stop-drive">BOB train &middot; 33 min from Interlaken Ost &middot; free with pass</div>
+<div class="stop-drive">Train &middot; BOB, ~38 min from Unterseen via Interlaken Ost &middot; free with pass</div>
 <div class="stop-acts"><div class="acts-heading">&#127919; Activities</div><div class="act-row"><span class="act-badge act-couple">&#128100; Jungfraujoch tickets &amp; Good Morning Ticket</span><a class="act-book" href="https://www.jungfrau.ch/en-gb/" target="_blank">Book</a></div></div></div>
 </div>
 <div class="stop">
 <div class="stop-time">07:15</div><div class="stop-icon">&#128646;</div>
-<div class="stop-detail"><div class="stop-name">Eiger Express &amp; Jungfraubahn</div><div class="stop-desc">World's most modern cable car to Eigergletscher, then the century-old rack railway that tunnels 7&thinsp;km through the Eiger and M&ouml;nch. Brief stop at the Eismeer window for glacier views.</div><div class="stop-drive">Eiger Express + Jungfraubahn &middot; 41 min from Grindelwald Terminal &middot; 25% off with pass</div></div>
+<div class="stop-detail"><div class="stop-name">Eiger Express &amp; Jungfraubahn</div><div class="stop-desc">World's most modern cable car to Eigergletscher, then the century-old rack railway that tunnels 7&thinsp;km through the Eiger and M&ouml;nch. Brief stop at the Eismeer window for glacier views.</div><div class="stop-drive">Cable car + rack train &middot; Eiger Express + Jungfraubahn, 41 min &middot; 25% off with pass</div></div>
 </div>
 <div class="stop">
 <div class="stop-time">08:00</div><div class="stop-icon">&#127957;</div>
@@ -268,7 +285,7 @@ a.act-book:hover{background:#1e40af;color:#fff;border-color:#1e40af}
 <div class="stop">
 <div class="stop-time">12:00</div><div class="stop-icon">&#127859;</div>
 <div class="stop-detail"><div class="stop-name">Lunch: Restaurant Bollywood <span class="must-see">&#9733; Indian Day</span> <span class="cafe-tag">Indian</span></div><div class="stop-desc">The highest Indian restaurant in the world, at 3,454&thinsp;m &mdash; dal, butter chicken and naan with a glacier view. Your Indian-restaurant requirement, done at the summit.</div>
-<div class="stop-drive">On-site at Jungfraujoch, level opposite the Ice Palace</div></div>
+<div class="stop-drive">Walk &middot; on-site at Jungfraujoch, opposite the Ice Palace</div></div>
 </div>
 <div class="stop">
 <div class="stop-time">13:00</div><div class="stop-icon">&#127860;</div>
@@ -276,12 +293,12 @@ a.act-book:hover{background:#1e40af;color:#fff;border-color:#1e40af}
 </div>
 <div class="stop">
 <div class="stop-time">13:30</div><div class="stop-icon">&#128646;</div>
-<div class="stop-detail"><div class="stop-name">Descend</div><div class="stop-desc">Retrace the route &mdash; back in Interlaken around 15:30. The Good Morning Ticket's 13:00 return deadline keeps the pace moving.</div><div class="stop-drive">~2 hr back to Interlaken</div></div>
+<div class="stop-detail"><div class="stop-name">Descend</div><div class="stop-desc">Retrace the route &mdash; back in Unterseen around 15:45. The Good Morning Ticket's 13:00 return deadline keeps the pace moving.</div><div class="stop-drive">Train &middot; ~2h back to Unterseen &middot; free with pass</div></div>
 </div>
 <div class="stop">
 <div class="stop-time">19:30</div><div class="stop-icon">&#127859;</div>
 <div class="stop-detail"><div class="stop-name">Dinner: India Village <span class="must-see">&#9733; Indian Day</span> <span class="cafe-tag">Indian</span></div><div class="stop-desc">Well-loved Interlaken Indian: butter chicken, shahi paneer, great naan. The perfect finish to your Indian day after the summit feast.</div>
-<div class="stop-drive">10 min walk from Interlaken West</div>
+<div class="stop-drive">Walk &middot; 10 min from Unterseen</div>
 <div class="stop-acts"><div class="acts-heading">&#127919; Activities</div><div class="act-row"><span class="act-badge act-couple">&#128100; Indian dinner night</span><a class="act-book" href="https://india-village.net/" target="_blank">Book</a></div></div></div>
 </div>
 </div>
@@ -290,21 +307,21 @@ a.act-book:hover{background:#1e40af;color:#fff;border-color:#1e40af}
 <div class="day-header"><span>&#129440;</span> Day 4 &mdash; Tue 4 Aug &middot; Paragliding, Grindelwald First &amp; Lauterbrunnen</div>
 
 <div class="map-section">
-<div class="map-h">&#128205; Interlaken &rarr; Grindelwald &rarr; Lauterbrunnen &rarr; Interlaken</div>
-<iframe loading="lazy" src="https://maps.google.com/maps?saddr=Interlaken&daddr=Grindelwald+to:Lauterbrunnen+to:Interlaken&dirflg=t&output=embed" allowfullscreen></iframe>
-<a class="map-link" href="https://www.google.com/maps/dir/Interlaken/Grindelwald/Lauterbrunnen/Interlaken?travelmode=transit" target="_blank">Open transit route in Google Maps</a>
+<div class="map-h">&#128205; Unterseen &rarr; Grindelwald &rarr; Lauterbrunnen &rarr; Unterseen</div>
+<iframe loading="lazy" src="https://maps.google.com/maps?saddr=Unterseen&daddr=Grindelwald+to:Lauterbrunnen+to:Unterseen&dirflg=t&output=embed" allowfullscreen></iframe>
+<a class="map-link" href="https://www.google.com/maps/dir/Unterseen/Grindelwald/Lauterbrunnen/Unterseen?travelmode=transit" target="_blank">Open transit route in Google Maps</a>
 </div>
 
 <div class="stop">
 <div class="stop-time">09:00</div><div class="stop-icon">&#129440;</div>
 <div class="stop-detail"><div class="stop-name">Tandem paragliding over Interlaken <span class="must-see">&#9733; Must-See</span></div><div class="stop-desc">The bucket-list flight &mdash; take off above Interlaken and float down to land on the H&ouml;hematte. ~CHF 180, 10&ndash;20 min in the air. Book ahead, it's peak season. Photos ~CHF 40 extra.</div>
-<div class="stop-drive">Pick-up / launch from Beatenberg, 20 min from Interlaken</div>
+<div class="stop-drive">Pick-up / launch from Beatenberg, 20 min from Unterseen</div>
 <div class="stop-imgs"><img src="https://images.pexels.com/photos/13613013/pexels-photo-13613013.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Tandem paragliding Grindelwald" loading="lazy"></div>
 <div class="stop-acts"><div class="acts-heading">&#127919; Activities</div><div class="act-row"><span class="act-badge act-couple">&#128100; Tandem flight for two &mdash; same time slot</span><a class="act-book" href="https://www.skywings.ch/" target="_blank">Book</a></div></div></div>
 </div>
 <div class="stop">
 <div class="stop-time">10:45</div><div class="stop-icon">&#128646;</div>
-<div class="stop-detail"><div class="stop-desc">Train to Grindelwald, then the gondola up to First (25 min) &mdash; the mountain lifts are an attraction in themselves.</div><div class="stop-drive">BOB train 33 min from Interlaken, then gondola 25 min &middot; gondola 50% off</div><div class="stop-name">Train &amp; gondola to First</div></div>
+<div class="stop-detail"><div class="stop-desc">Train to Grindelwald, then the gondola up to First (25 min) &mdash; the mountain lifts are an attraction in themselves.</div><div class="stop-drive">Train &middot; BOB ~38 min from Unterseen, then gondola 25 min &middot; gondola 50% off</div><div class="stop-name">Train &amp; gondola to First</div></div>
 </div>
 <div class="stop">
 <div class="stop-time">11:30</div><div class="stop-icon">&#127957;</div>
@@ -319,11 +336,11 @@ a.act-book:hover{background:#1e40af;color:#fff;border-color:#1e40af}
 <div class="stop">
 <div class="stop-time">13:00</div><div class="stop-icon">&#127797;</div>
 <div class="stop-detail"><div class="stop-name">Bachalpsee hike</div><div class="stop-desc">The classic First hike &mdash; 50 gentle minutes to twin alpine lakes that mirror the Schreckhorn massif. Go early if you want the mirror-still reflection.</div>
-<div class="stop-drive">50 min walk from First station</div></div>
+<div class="stop-drive">Walk &middot; 50 min from First station</div></div>
 </div>
 <div class="stop">
 <div class="stop-time">15:15</div><div class="stop-icon">&#128646;</div>
-<div class="stop-detail"><div class="stop-name">Gondola down &amp; train to Lauterbrunnen</div><div class="stop-desc">Down from First, then the valley train via Zweil&uuml;tschinen into the Lauterbrunnen valley.</div><div class="stop-drive">35 min from Grindelwald</div></div>
+<div class="stop-detail"><div class="stop-name">Gondola down &amp; train to Lauterbrunnen</div><div class="stop-desc">Down from First, then the valley train via Zweil&uuml;tschinen into the Lauterbrunnen valley.</div><div class="stop-drive">Gondola + train &middot; ~40 min to Lauterbrunnen</div></div>
 </div>
 <div class="stop">
 <div class="stop-time">16:00</div><div class="stop-icon">&#128167;</div>
@@ -333,7 +350,7 @@ a.act-book:hover{background:#1e40af;color:#fff;border-color:#1e40af}
 </div>
 <div class="stop">
 <div class="stop-time">18:00</div><div class="stop-icon">&#128646;</div>
-<div class="stop-detail"><div class="stop-name">Return to Interlaken</div><div class="stop-desc">PostBus or train back along the valley &mdash; golden-hour light on the cliffs.</div><div class="stop-drive">25 min train or PostBus from Lauterbrunnen &middot; free with pass</div></div>
+<div class="stop-detail"><div class="stop-name">Return to Unterseen</div><div class="stop-desc">PostBus or train back along the valley &mdash; golden-hour light on the cliffs.</div><div class="stop-drive">Train &middot; ~30 min from Lauterbrunnen &middot; free with pass</div></div>
 </div>
 <div class="stop">
 <div class="stop-time">19:30</div><div class="stop-icon">&#127860;</div>
@@ -345,15 +362,15 @@ a.act-book:hover{background:#1e40af;color:#fff;border-color:#1e40af}
 <div class="day-header"><span>&#128646;</span> Day 5 &mdash; Wed 5 Aug &middot; Harder Kulm &amp; Home</div>
 
 <div class="map-section">
-<div class="map-h">&#128205; Interlaken &rarr; Harder Kulm &rarr; Zurich Airport</div>
-<iframe loading="lazy" src="https://maps.google.com/maps?saddr=Interlaken&daddr=Harder+Kulm+to:Zurich+Airport&dirflg=t&output=embed" allowfullscreen></iframe>
-<a class="map-link" href="https://www.google.com/maps/dir/Interlaken/Harder+Kulm/Zurich+Airport?travelmode=transit" target="_blank">Open transit route in Google Maps</a>
+<div class="map-h">&#128205; Unterseen &rarr; Harder Kulm &rarr; Zurich Airport</div>
+<iframe loading="lazy" src="https://maps.google.com/maps?saddr=Unterseen&daddr=Harder+Kulm+to:Zurich+Airport&dirflg=t&output=embed" allowfullscreen></iframe>
+<a class="map-link" href="https://www.google.com/maps/dir/Unterseen/Harder+Kulm/Zurich+Airport?travelmode=transit" target="_blank">Open transit route in Google Maps</a>
 </div>
 
 <div class="stop">
 <div class="stop-time">09:00</div><div class="stop-icon">&#128646;</div>
 <div class="stop-detail"><div class="stop-name">Harder Kulm funicular <span class="must-see">&#9733; Must-See</span></div><div class="stop-desc">Interlaken's own mountain &mdash; a 10-min funicular to the Two Lakes Bridge, a glass-floor platform over Lake Thun and Lake Brienz with the Eiger, M&ouml;nch and Jungfrau dead ahead.</div>
-<div class="stop-drive">Harderbahn funicular &middot; 10 min from Interlaken Ost &middot; 50% off with pass</div>
+<div class="stop-drive">Train + funicular &middot; 15 min from Unterseen via Interlaken Ost &middot; 50% off with pass</div>
 <div class="stop-imgs"><img src="https://media.myswitzerland.com/image/fetch/c_lfill,g_auto,w_800,h_450/f_auto,q_80,fl_keep_iptc/https://www.myswitzerland.com/-/media/celum%20connect/2026/02/03/16/17/09/interlaken-harderbahn.jpg" alt="Harder Kulm over Lake Brienz" loading="lazy"><img src="https://media.myswitzerland.com/image/fetch/c_lfill,g_auto,w_800,h_450/f_auto,q_80,fl_keep_iptc/https://www.myswitzerland.com/-/media/celum%20connect/2025/12/23/11/55/59/harder-kulm-zwei-seen-steg.jpg" alt="Interlaken from Harder Kulm" loading="lazy"></div>
 <div class="stop-acts"><div class="acts-heading">&#127919; Activities</div><div class="act-row"><span class="act-badge act-couple">&#128100; Two Lakes Bridge &mdash; best panorama of the trip</span><a class="act-book" href="https://www.jungfrau.ch/en-gb/harder-kulm" target="_blank">Book</a></div></div></div>
 </div>
@@ -367,7 +384,7 @@ a.act-book:hover{background:#1e40af;color:#fff;border-color:#1e40af}
 </div>
 <div class="stop">
 <div class="stop-time">11:30</div><div class="stop-icon">&#128646;</div>
-<div class="stop-detail"><div class="stop-name">Train to Zurich Airport</div><div class="stop-desc">Direct IC from Interlaken Ost &mdash; 2 hours. Flight isn't until 20:55, so there's time for a relaxed lunch stop in Bern or Zurich old town on the way if you fancy it.</div><div class="stop-drive">IC direct &middot; ~2 hr to Zurich Flughafen &middot; free with pass</div></div>
+<div class="stop-detail"><div class="stop-name">Train to Zurich Airport</div><div class="stop-desc">Direct IC from Interlaken Ost &mdash; 2 hours. Flight isn't until 20:55, so there's time for a relaxed lunch stop in Bern or Zurich old town on the way if you fancy it.</div><div class="stop-drive">Train &middot; IC direct, ~2h from Interlaken Ost &middot; free with pass</div></div>
 </div>
 <div class="stop">
 <div class="stop-time">20:55</div><div class="stop-icon">&#9992;&#65039;</div>
@@ -378,7 +395,8 @@ a.act-book:hover{background:#1e40af;color:#fff;border-color:#1e40af}
 <div class="info-box">
 <h3>&#127869; Food &amp; Drink</h3>
 <ul>
-<li>&#127793; Tibits, Lucerne &mdash; pay-by-weight vegan &amp; veggie buffet by the station (our Day 1 lunch)</li>
+<li>&#127793; Tibits, Lucerne &mdash; pay-by-weight vegan &amp; veggie buffet by the station (Day 1 dinner option)</li>
+<li>&#127853; <a href="https://www.lindt-home-of-chocolate.com/" target="_blank">Lindt Home of Chocolate</a>, Kilchberg &mdash; 9-m chocolate fountain + world's largest Lindt shop (Day 1 morning)</li>
 <li>&#127859; Dosa House, Lucerne &mdash; South Indian dosas &amp; thalis, quick and cheap (Day 2 lunch)</li>
 <li>&#127859; Restaurant Bollywood, Jungfraujoch &mdash; the highest Indian restaurant in the world, 3,454&thinsp;m (Day 3 summit lunch)</li>
 <li>&#127859; <a href="https://india-village.net/" target="_blank">India Village, Interlaken</a> &mdash; butter chicken, shahi paneer, excellent naan (Day 3 dinner)</li>
@@ -392,15 +410,29 @@ a.act-book:hover{background:#1e40af;color:#fff;border-color:#1e40af}
 
 <div class="info-box">
 <h3>&#128646; Public Transport &amp; Swiss Travel Pass</h3>
+<table class="pt-table">
+<thead><tr><th>Day</th><th>Route</th><th>Mode</th><th>Pass</th></tr></thead>
+<tbody>
+<tr><td class="pt-day">1</td><td>Zurich Airport &rarr; Kilchberg (Lindt)</td><td>Train</td><td><span class="pass-tag pass-inc">Included</span></td></tr>
+<tr><td class="pt-day">1</td><td>Kilchberg &rarr; Lucerne &rarr; Meggen</td><td>Train</td><td><span class="pass-tag pass-inc">Included</span></td></tr>
+<tr><td class="pt-day">1</td><td>Meggen &harr; Lucerne (evening)</td><td>Train</td><td><span class="pass-tag pass-inc">Included</span></td></tr>
+<tr><td class="pt-day">2</td><td>Meggen pier &rarr; Vitznau</td><td>Boat</td><td><span class="pass-tag pass-inc">Included</span></td></tr>
+<tr><td class="pt-day">2</td><td>Vitznau &rarr; Rigi Kulm &rarr; Kaltbad</td><td>Cogwheel train</td><td><span class="pass-tag pass-inc">Included</span></td></tr>
+<tr><td class="pt-day">2</td><td>Kaltbad &rarr; Weggis &rarr; Lucerne</td><td>Cable car + boat</td><td><span class="pass-tag pass-inc">Included</span></td></tr>
+<tr><td class="pt-day">2</td><td>Lucerne &rarr; Interlaken &rarr; Unterseen</td><td>Train</td><td><span class="pass-tag pass-inc">Included</span></td></tr>
+<tr><td class="pt-day">3</td><td>Unterseen &rarr; Grindelwald Terminal</td><td>Train (BOB)</td><td><span class="pass-tag pass-inc">Included</span></td></tr>
+<tr><td class="pt-day">3</td><td>Grindelwald &rarr; Jungfraujoch</td><td>Cable car + rack train</td><td><span class="pass-tag pass-off25">-25% &asymp; CHF 169</span></td></tr>
+<tr><td class="pt-day">4</td><td>Unterseen &rarr; Grindelwald &rarr; First</td><td>Train + gondola</td><td><span class="pass-tag pass-off50">Gondola -50%</span></td></tr>
+<tr><td class="pt-day">4</td><td>Unterseen &rarr; Lauterbrunnen</td><td>Train</td><td><span class="pass-tag pass-inc">Included</span></td></tr>
+<tr><td class="pt-day">5</td><td>Unterseen &rarr; Harder Kulm</td><td>Train + funicular</td><td><span class="pass-tag pass-off50">-50% &asymp; CHF 22</span></td></tr>
+<tr><td class="pt-day">5</td><td>Unterseen &rarr; Zurich Airport</td><td>Train (IC)</td><td><span class="pass-tag pass-inc">Included</span></td></tr>
+</tbody>
+</table>
 <ul>
-<li>&#129505; <strong>Swiss Travel Pass</strong> &mdash; a 6-day, 2nd-class pass (&asymp; CHF 399, Aug 1&ndash;6) covers every leg of this plan. Hop on any train, boat or PostBus &mdash; no per-journey booking needed.</li>
-<li><strong>Day 1</strong> &mdash; Zurich Flughafen &rarr; Luzern: direct IC/IR, 50 min. <strong>Included</strong> &mdash; city trams &amp; buses in Lucerne free too.</li>
-<li><strong>Day 2</strong> &mdash; Lake Lucerne paddle steamer to Vitznau (~1h), Rigi cogwheel to Rigi Kulm (35 min), cable car down to Weggis, boat back to Luzern: <strong>all included</strong> &mdash; Rigi is one of only 3 mountains fully free with the pass. Then the Luzern&ndash;Interlaken Express over the Br&uuml;nig Pass (~2h): <strong>included</strong>.</li>
-<li><strong>Day 3</strong> &mdash; BOB train to Grindelwald Terminal (33 min): <strong>included</strong>. Eiger Express + Jungfraubahn to Jungfraujoch (41 min): <strong>25% off</strong> &asymp; CHF 169. Seat reservation +CHF 10 (May&ndash;Oct).</li>
-<li><strong>Day 4</strong> &mdash; BOB to Grindelwald: <strong>included</strong>. Grindelwald&ndash;First gondola: <strong>50% off</strong> &asymp; CHF 34 return. BOB to Lauterbrunnen (20 min) + valley PostBus: <strong>included</strong>.</li>
-<li><strong>Day 5</strong> &mdash; Harder Kulm funicular (10 min): <strong>50% off</strong> &asymp; CHF 22 return. IC direct to Zurich Flughafen (~2h): <strong>included</strong>.</li>
-<li>&#127881; Free with the pass: Rigi, all lake boats, city transport and 500+ museums. <strong>Not covered:</strong> paragliding, and the First adventure rides (First Flyer, Mountain Cart, Trotti bikes) &mdash; book those separately.</li>
-<li>Use the <a href="https://www.sbb.ch/" target="_blank">SBB app</a> for live times &amp; platforms &mdash; every route here is a direct connection with no reservation except Jungfraujoch (+CHF 10).</li>
+<li>&#129505; <strong>Swiss Travel Pass</strong> &mdash; 6 days, 2nd class, &asymp; CHF 399 (Sat 1 &ndash; Thu 6 Aug). One pass covers the whole table &mdash; no per-journey tickets.</li>
+<li>&#127881; Free with the pass: Rigi, all lake boats, city transport and 500+ museums. <strong>Not covered:</strong> paragliding and the First adventure rides (First Flyer, Mountain Cart, Trotti) &mdash; book those separately.</li>
+<li>Book ahead online: Jungfraujoch (seat reservation +CHF 10, May&ndash;Oct) and Lindt museum (CHF 17, time slot).</li>
+<li>Use the <a href="https://www.sbb.ch/" target="_blank">SBB app</a> for live times &amp; platforms.</li>
 </ul>
 </div>
 
